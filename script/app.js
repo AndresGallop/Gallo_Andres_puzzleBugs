@@ -55,9 +55,21 @@
 	function resetPieces(event) {
 		console.log('Now, try this puzzle');
 
-		let droppedImage = document.
+		/*let node = document.getElementById("img0");
 
-		event.target.removeChild(document.querySelector(`#${droppedImage}`));
+        if (node.parentNode) {
+        node.parentNode.removeChild(node);*/
+
+        let element = document.querySelector(".puzzle-board");
+        let droppedImage = "draggedImg";
+
+
+        while (element.firstChild) {
+
+        element.removeChild(element.firstChild);
+        event.preventDefault()
+
+    }
 
 	
 	// let currentTrack = event.dataTransfer.getData('targetTrack');
