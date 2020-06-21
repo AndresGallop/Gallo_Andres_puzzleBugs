@@ -20,8 +20,22 @@
 		// and set the drop zone background
 		gameBoard.style.backgroundImage = `url(images/backGround${this.dataset.bgkey}.jpg)`;
 
+		console.log(dropZones)
 
-	}
+        dropZones.forEach((dropZone) => {
+
+            while (dropZone.firstChild) 
+            {let thisChild = dropZone.removeChild(dropZone.firstChild);
+
+
+                dragcontainer.appendChild(thisChild);
+            }
+        })
+
+
+
+    }
+
 
 
 	function allowDrag(event) {
@@ -53,16 +67,24 @@
 
 		event.target.appendChild(document.querySelector(`#${droppedImage}`));
 		//debugger;
+		 
+
+
 	}
 
 	function resetPieces(event) {
 		console.log('Now, try this puzzle');
 
-		const dropZones = document.querySelectorAll(".drop-zone");
+		if (event.currentTarget.children.length === 0) {
+           
+        }
+
+
+		/*const dropZones = document.querySelectorAll(".drop-zone");
 		let theimg = dropZones.firstElementChild
 		const dragcontainer = document.querySelector(".puzzle-pieces");
 
-		dragcontainer.appendChild(theimg)
+		dragcontainer.appendChild(theimg)*/
 
 
 		/*var foo = document.getElementById('img0');
