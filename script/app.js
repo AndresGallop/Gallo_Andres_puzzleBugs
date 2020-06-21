@@ -5,6 +5,7 @@
 				puzzlePieces = document.querySelectorAll(".puzzle-image"),
 				dropZones = document.querySelectorAll(".drop-zone"),
 				gameBoard = document.querySelector(".puzzle-board"); // one to one relationship -> returns the first matching element
+				dragcontainer = document.querySelector(".puzzle-pieces");
 
 	let imageNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
 
@@ -39,6 +40,8 @@
 		console.log('dragged something over me!');
 		event.preventDefault(); // for next week
 
+
+
 		
 	}
 
@@ -55,9 +58,24 @@
 	function resetPieces(event) {
 		console.log('Now, try this puzzle');
 
-		let droppedImage = document.
+		const dropZones = document.querySelectorAll(".drop-zone");
+		let theimg = dropZones.firstElementChild
+		const dragcontainer = document.querySelector(".puzzle-pieces");
 
-		event.target.removeChild(document.querySelector(`#${droppedImage}`));
+		dragcontainer.appendChild(theimg)
+
+
+		/*var foo = document.getElementById('img0');
+        for (var i = 0; i < foo.children.length; i++) {
+        console.log(foo.children[i].tagName);
+}
+
+
+
+
+		/*let droppedImage = document.
+
+		event.removeChild(document.querySelectorAll(`images/${piece + this.dataset.bgkey}.jpg`));*/
 
 	
 	// let currentTrack = event.dataTransfer.getData('targetTrack');
