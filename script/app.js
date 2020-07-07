@@ -64,8 +64,10 @@
 
 		let droppedImage = event.dataTransfer.getData("draggedImg");
 		// let currentTrack = event.dataTransfer.getData('targetTrack');
-
-		event.target.appendChild(document.querySelector(`#${droppedImage}`));
+           if (event.currentTarget.children.length === 0) {
+           event.target.appendChild(document.querySelector(`#${droppedImage}`));
+        }
+		
 		//debugger;
 		 
 
@@ -75,9 +77,8 @@
 	function resetPieces(event) {
 		console.log('Now, try this puzzle');
 
-		if (event.currentTarget.children.length === 0) {
-           
-        }
+	
+		
 
 
 		/*const dropZones = document.querySelectorAll(".drop-zone");
